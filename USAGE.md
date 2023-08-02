@@ -49,7 +49,7 @@ Required Auth: `Token`
 Example:
 
 ```bash
-curl --location 'http://localhost:8000/api/artists/?artist=Artist1' --header 'Authorization: Token d1cb28a74bf18075da4eaca6143737d2d579ddaa'
+curl --location 'http://localhost:8000/api/artists/?artist=Artist3' --header 'Authorization: Token d1cb28a74bf18075da4eaca6143737d2d579ddaa'
 ```
 
 ## Create Work
