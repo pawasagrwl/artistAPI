@@ -18,28 +18,22 @@ cd artistapi
 pip install -r requirements.txt
 python manage.py makemigrations
 python manage.py migrate
+```
+### Optional (admin already exists)
+```bash
 python manage.py createsuperuser
-python manage.py runserver
 ```
 
+### Run
+```bash
+python manage.py runserver
+```
+*This will run the server at localhost (127.0.0.1:8000)*
 ## Usage
 
 You can use any HTTP client like curl, httpie or Postman to interact with the API.
 
-### Endpoints
-
-- Register a user: POST /api/register/
-- Login a user and get token: POST /api/login/
-- Create a new work: POST /api/works/
-- Retrieve a list of all works: GET /api/works/
-- Filter works by type: GET /api/works/?work_type=<YT/IG/OT>
-- Search artists by name: GET /api/artists/?search=[ArtistName]
-
-### Tests
-
-```bash
-python manage.py test
-```
+Read [USAGE](USAGE.md) for available endpoints
 
 
 
