@@ -27,5 +27,5 @@ router.register('works', WorkViewSet, basename='works')
 urlpatterns = [
     path('api/', include(router.urls)),
     path('api/register/', RegisterView.as_view()),
-    path('api/login/', obtain_auth_token, name='login'),  # get existing auth token
+    path('api/login/', obtain_auth_token, name='login'), 
 ]

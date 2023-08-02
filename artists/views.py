@@ -14,8 +14,6 @@
 # along with ArtistAPI.  If not, see <https://www.gnu.org/licenses/>.
 
 
-# from django.shortcuts import render, get_object_or_404
-# from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
 from django.contrib.auth.hashers import make_password
 from django.http import HttpResponse
@@ -24,11 +22,10 @@ from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import viewsets, status
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated, IsAdminUser, BasePermission, SAFE_METHODS
-# from rest_framework.filters import SearchFilter
 from rest_framework.authtoken.models import Token
 from rest_framework.response import Response
 from rest_framework.views import APIView
-# from rest_framework.decorators import api_view, authentication_classes, permission_classes
+
 
 from .models import Artist, Work
 from .serializers import ArtistSerializer, WorkSerializer, UserSerializer
@@ -83,9 +80,9 @@ class RegisterView(APIView):
         user = User(username=username, password=make_password(password))
         user.save()
         
-        artist = Artist.objects.get(user=user)  # get the artist associated with this user
-        artist.name = name  # set the artist name
-        artist.save()  # save the artist object
+        artist = Artist.objects.get(user=user) 
+        artist.name = name
+        artist.save()
         
         token, _ = Token.objects.get_or_create(user=user)
         
